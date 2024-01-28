@@ -1,0 +1,15 @@
+datasource db {
+  provider     = "mysql"
+  url          = "mysql://blep:9j*IE32053p@localhost:3306/blep"
+  relationMode = "prisma"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String @unique
+}
