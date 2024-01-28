@@ -1,0 +1,10 @@
+const { PrismaClient } = require('../../prisma/src/generated/client');
+const prisma = new PrismaClient()
+
+async function getAllUsers() {
+  return prisma.user.findMany();
+}
+
+module.exports = {
+  getAllUsers,
+};
